@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                sh '''
+                docker build . -t docker-test
+                '''
             }
         }
         stage('Test') {
